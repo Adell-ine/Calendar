@@ -23,6 +23,8 @@ public class calendar {
 	public static void main(String[] args) {
 
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
+		
+		String PROMPT="cal> ";
 		Scanner scanner = new Scanner(System.in);
 		calendar cal = new calendar();
 		
@@ -31,6 +33,7 @@ public class calendar {
 		
 		for (int i=0; i < repeat; i++) {
 			System.out.println("최대 일수를 알고싶은 달을 입력하세요.");
+			System.out.print(PROMPT);
 			int month = scanner.nextInt();
 
 			System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.getmaxDaysOfMonth(month));
