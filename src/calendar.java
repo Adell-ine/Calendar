@@ -23,22 +23,28 @@ public class calendar {
 	public static void main(String[] args) {
 
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
-		
-		String PROMPT="cal> ";
+
+		String PROMPT = "cal> ";
 		Scanner scanner = new Scanner(System.in);
 		calendar cal = new calendar();
-		
-		System.out.println("반복횟수를 입력하세요."); 
-		int repeat = scanner.nextInt();
-		
-		for (int i=0; i < repeat; i++) {
+
+//		System.out.println("반복횟수를 입력하세요."); 
+
+		int month = 1;
+		while (true) {
 			System.out.println("최대 일수를 알고싶은 달을 입력하세요.");
 			System.out.print(PROMPT);
-			int month = scanner.nextInt();
+			month = scanner.nextInt();
+			if (month == -1) {
+				break; // 만나면 루프를 빠져나감
+			}
 
+			if (month > 12) {
+				continue; // 만나면 루프의 처음으로 돌아감
+			}
 			System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.getmaxDaysOfMonth(month));
 		}
-		
+
 		System.out.println("끗~");
 		scanner.close();
 //		cal.printSampleCalendar();
